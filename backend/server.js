@@ -1,11 +1,14 @@
 import express from "express";
+import dotenv from "dotenv";
+import { connectDB } from "./config/db.js";
+
+dotenv.config();
 
 const app = express();
 
-app.get("/", (req, res) => {
-  res.send('server is ready')
-});
+app.get("/products", (req, res) => {});
 
 app.listen(5002, () => {
+  connectDB();
   console.log('server started at http://localhost:5002')
 });
